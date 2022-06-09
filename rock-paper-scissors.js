@@ -30,9 +30,9 @@ function playRound(playerSelection, computerSelection) {
 
 //function that plays the number of games specified by the user
 function game() {
-    let numberOfGames = prompt("Enter the number of games you want to play: ")
+    const numberOfGames = Number(window.prompt("Enter the number of games you want to play: "))
     for (let i=0; i < numberOfGames; i++) {
-        let player = prompt("Enter your choice of Rock, Paper, or Scissors")
+        let player = window.prompt("Enter your choice of Rock, Paper, or Scissors")
         console.log(playRound(player, computerPlay()));
     }
 }
