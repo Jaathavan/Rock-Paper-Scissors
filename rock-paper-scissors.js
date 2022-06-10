@@ -29,13 +29,16 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //function that plays the number of games specified by the user
-function game() {
-    const numberOfGames = Number(window.prompt("Enter the number of games you want to play: "))
-    for (let i=0; i < numberOfGames; i++) {
-        let player = window.prompt("Enter your choice of Rock, Paper, or Scissors")
-        console.log(playRound(player, computerPlay()));
-    }
-}
+function game(choice) {
+    const results = document.querySelector('#results');
+    results.textContent = playRound(choice, computerPlay());
+ }
 
+ const btn = document.querySelectorAll('button');
 
-console.log(game());
+ btn.forEach((button) => {
+    button.addEventListener('click', () => {
+        game(button.id);
+    })
+    
+ });
